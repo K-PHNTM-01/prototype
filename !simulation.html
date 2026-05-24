@@ -1,0 +1,87 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Gay-Lussac's Law Simulator</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="container">
+          <h1>Gay-Lussac's Law Simulator</h1>
+          <p class="formula">P₁ / T₁ = P₂ / T₂ (Constant Volume)</p>
+<hr>
+<div class="note-box">
+   <strong>Gay-Lussac's Law</strong> 
+            states that the absolute temperature (in Kelvin) and pressure of an ideal gas is directly proportional, under conditions of constant mass and volume. 
+</div>
+    
+
+  <div class="controls">
+  <div class="input-group">
+  <label>Initial Temperature (T₁)</label>
+  <input type="number" id="temp1" value="25" min="1" step="0.1">
+  <select id="temp1Unit">
+  <option value="C" selected>Celsius (°C)</option>
+  <option value="K">Kelvin (K)</option>
+  <option value="F">Fahrenheit (°F)</option>
+  </select>
+  
+    <small id="temp1Converted" class="conversion"></small>
+  </div>
+    
+  <div class="input-group">
+  <label>Initial Pressure (P₁)</label>
+  <input type="number" id="pressure1" value="1" min="0.1" step="0.01">
+   <select id="pressure1Unit">
+  <option value="atm" selected>atm</option>
+  <option value="kPa">kPa</option>
+  <option value="psi">psi</option>
+  <option value="bar">bar</option>
+  </select>
+   <small id="pressure1Converted"      class="conversion"></small>
+  </div>
+    
+  <div class="input-group">
+  <label>Final Temperature (T₂)</label>
+  <input type="number" id="temp2" value="100" min="1" step="0.1">
+  <select id="temp2Unit">
+  <option value="C" selected>Celsius (°C)</option>
+  <option value="K">Kelvin (K)</option>
+  <option value="F">Fahrenheit (°F)</option>
+   </select>
+  <small id="temp2Converted" class="conversion">  </small>
+  </div>
+    
+  <div class="output-group">
+  <label>Final Pressure (P₂)</label>
+  <span id="pressure2Output" class="result">2.00 atm</span>
+  </div>
+
+  <div class="volume-display">
+  <label>Volume (Constant)</label>
+  <span>10.0 L</span>
+  </div>
+</div>
+        
+  <div class="simulation-wrapper">
+  <canvas id="particleCanvas" width="500" height="320"></canvas>
+   <div class="indicators">
+  <div>T: <span id="tempIndicator">298 K</span>     </div>
+ 
+  <div>P: <span id="pressureIndicator">1.00 atm</span></div>
+  </div>
+</div>
+
+  <div class="slider-control">
+  <label>Live Temperature Adjustment:</label>
+  <input type="range" id="tempSlider" min="100" max="1000" value="298" step="1">
+  <span id="sliderValue">298 K</span>
+  </div>
+
+  <button id="resetBtn">Reset Simulation</button>
+  </div>
+
+  <script src="script.js"></script>
+  </body>
+  </html>
